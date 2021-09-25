@@ -13,8 +13,7 @@ spec:
   template:
     metadata:
       labels:
-        app: nginx
-        tag: alpine
+        app: techtrends
     spec:
       containers:
       - image: techtrends:latest

@@ -1,0 +1,38 @@
+## Docker commands used to build the application 
+docker build --tag techtrends .
+
+## Docker commands used to run the application
+docker run -p 7111:3111 --name techtrends_app techtrends
+
+## Docker commands used to get the application logs
+docker logs techtrends_app 
+docker logs techtrends_app -f
+
+## Logs from the container running the TechTrends application
+@ 23:10:03 ✖ docker logs techtrends_app -f
+ * Serving Flask app "app" (lazy loading)
+ * Environment: production
+   WARNING: This is a development server. Do not use it in a production deployment.
+   Use a production WSGI server instead.
+ * Debug mode: on
+INFO:_internal:2021-09-21 21:08:37,868,  * Running on http://0.0.0.0:3111/ (Press CTRL+C to quit)
+INFO:_internal:2021-09-21 21:08:37,869,  * Restarting with stat
+WARNING:_internal:2021-09-21 21:08:37,987,  * Debugger is active!
+INFO:_internal:2021-09-21 21:08:37,988,  * Debugger PIN: 444-968-706
+INFO:_internal:2021-09-21 21:10:35,405, 172.17.0.1 - - [21/Sep/2021 21:10:35] "GET / HTTP/1.1" 200 -
+INFO:app:2021-09-21 21:10:37,222, Article "2020 CNCF Annual Report" retrieved!
+INFO:_internal:2021-09-21 21:10:37,225, 172.17.0.1 - - [21/Sep/2021 21:10:37] "GET /1 HTTP/1.1" 200 -
+INFO:app:2021-09-21 21:10:42,789, "About us" page accessed
+INFO:_internal:2021-09-21 21:10:42,791, 172.17.0.1 - - [21/Sep/2021 21:10:42] "GET /about HTTP/1.1" 200 -
+INFO:app:2021-09-21 21:10:46,405, "Create post" page accessed
+INFO:_internal:2021-09-21 21:10:46,409, 172.17.0.1 - - [21/Sep/2021 21:10:46] "GET /create HTTP/1.1" 200 -
+ERROR:app:2021-09-21 21:10:51,543, New post without title
+INFO:_internal:2021-09-21 21:10:51,544, 172.17.0.1 - - [21/Sep/2021 21:10:51] "POST /create HTTP/1.1" 200 -
+INFO:app:2021-09-21 21:11:00,505, New post created with title "test post"
+INFO:_internal:2021-09-21 21:11:00,506, 172.17.0.1 - - [21/Sep/2021 21:11:00] "POST /create HTTP/1.1" 302 -
+INFO:_internal:2021-09-21 21:11:00,517, 172.17.0.1 - - [21/Sep/2021 21:11:00] "GET / HTTP/1.1" 200 -
+INFO:_internal:2021-09-21 21:11:13,730, 172.17.0.1 - - [21/Sep/2021 21:11:13] "GET / HTTP/1.1" 200 -
+INFO:app:2021-09-21 21:11:14,043, Article "2020 CNCF Annual Report" retrieved!
+INFO:_internal:2021-09-21 21:11:14,044, 172.17.0.1 - - [21/Sep/2021 21:11:14] "GET /1 HTTP/1.1" 200 -
+ERROR:app:2021-09-21 21:11:15,156, Article id "15" not found!
+INFO:_internal:2021-09-21 21:11:15,158, 172.17.0.1 - - [21/Sep/2021 21:11:15] "GET /15 HTTP/1.1" 404 -
